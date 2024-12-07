@@ -1,0 +1,27 @@
+@if(currentTeacher){
+    <form (ngSubmit)="onSubmit()">
+
+        <label for="name">name:</label>
+        <input id="name" [(ngModel)]="currentTeacher.name" name="name" required>
+
+        <label for="classes">classes:</label>
+        <input id="classes" [(ngModel)]="currentTeacher.classes" name="classes" required>
+
+        <button type="submit" >Save</button>
+    </form>
+}
+@if(isAdd){
+    <form (ngSubmit)="onSubmit()">
+  
+        <label for="name">name:</label>
+        <input id="name" [(ngModel)]="newTeacher.name" name="name" required>
+
+        <label for="classes">classes:</label>
+        <input id="classes" [(ngModel)]="newTeacher.classes" name="classes" required>
+
+        <button type="submit" >Save</button>
+    </form>
+}
+
+
+

@@ -1,0 +1,12 @@
+<form>
+    <input #firstName type="text" placeholder="firstName" [value]="student.firstName">
+    <input #lastName type="text" placeholder="lastName" [value]="student.lastName">
+    <input #age type="number" placeholder="age" [value]="student.age">
+    <input #phone type="text" placeholder="phone" [value]="student.phone">
+    <input #average type="number" placeholder="average" [value]="student.average">
+    <input #address type="text" placeholder="address" [value]="student.address">
+    <input #isActive type="text" placeholder="isActive" [value]="student.isActive">
+    <button type="button"
+        (click)="OnSave(firstName.value,lastName.value, age.value, phone.value, average.value, address.value, isActive.value)">Save</button>
+    <button (click)="onCancel()">Cancel</button>
+</form>

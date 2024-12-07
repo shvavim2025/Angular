@@ -1,0 +1,19 @@
+<b>Teachers list:</b>
+<br />
+@for(teacher of teachers ; track teacher.id){
+<div>
+    Id: {{teacher.id}} , Name:{{teacher.name}} , Classes: {{teacher.classes}}</div>
+<button (click)="editTeacher(teacher)">Edit teacher</button>
+
+}
+<br />
+<hr/>
+
+<button (click)="add()">Add teacher</button>
+
+@if(teacherToUpdate){
+    <app-teacher-form [currentTeacher]="teacherToUpdate"   (formClose)="teacherToUpdate = undefined"></app-teacher-form>  
+}
+@if(isTeacherToAdd){
+    <app-teacher-form [isAdd]="true" (formClose)="isTeacherToAdd = false"></app-teacher-form>  
+}
