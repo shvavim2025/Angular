@@ -1,0 +1,8 @@
+name: <input #name type="text" [value]="email">
+age: <input #age type="number">
+email: <input #email type="email"> 
+
+<button (click)="save(name.value, age.value, email.value, child.color)">save</button>
+<app-lesson-5-child #child></app-lesson-5-child>
+
+<button (click)="child.color='green'">call child function</button>

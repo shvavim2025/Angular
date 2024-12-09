@@ -1,0 +1,26 @@
+<button (click)="Delete()">delete student</button>
+<app-lesson-6-child></app-lesson-6-child>
+<app-lesson-6-child></app-lesson-6-child>
+
+@if(true)
+{
+<app-lesson-6-child-ng-content>
+    <div ngProjectAs="content-body">body</div>
+    <button ngProjectAs="content-footer">content footer</button>
+</app-lesson-6-child-ng-content>
+}
+@else{
+<app-lesson-6-child-ng-content>
+    <b ngProjectAs="content-body">body</b>
+    <u ngProjectAs="content-footer">content footer</u>
+</app-lesson-6-child-ng-content>
+}
+
+<p #p1></p>
+
+@for(item of studentList; track item){
+{{item}}
+}
+@empty{
+no item to display
+}

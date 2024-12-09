@@ -1,0 +1,12 @@
+lesson-7-component
+<ng-template #Mytemplate>
+    <h2>תוכן מותאם אישית</h2>y
+    <p>זהו טקסט שניתן להציג במקרים שונים.</p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="Mytemplate"></ng-container >
+    
+<ng-container *ngTemplateOutlet="Mytemplate"></ng-container >
+
+    <button [myCustomDirective]="'red'" >custom directive</button>
+    <!-- <button myCustomDirective defaultColor="black">custom directive</button> -->

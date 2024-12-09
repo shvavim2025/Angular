@@ -1,0 +1,10 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="username">Username:</label>
+    <input id="username" formControlName="username" required>
+
+    <label for="age">age:</label>
+    <input id="age" formControlName="age" type="number" required>
+
+    <button type="submit">Submit</button>
+</form>
+   
