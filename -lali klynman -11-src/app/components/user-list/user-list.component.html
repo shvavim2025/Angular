@@ -1,0 +1,10 @@
+<h1>User List</h1>
+@for (user of users; track $index) {
+     Name: {{user.name}}, Email: {{user.email}}, Position: {{user.position}}
+    <br />
+}
+
+<button (click)="addUser()">Add User</button>
+@if(add){
+    <app-user-form (saveUser)="add=false"></app-user-form>
+}

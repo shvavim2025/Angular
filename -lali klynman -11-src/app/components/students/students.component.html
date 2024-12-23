@@ -1,0 +1,49 @@
+<ng-template #myMassage>
+    <h1 style="color:blue ; font-style: italic;">-----------List of Students:-------------</h1>
+</ng-template>
+<ng-container *ngTemplateOutlet="myMassage"></ng-container>
+<ul>
+    @for(student of students;track student.id){
+        <li >
+            {{ 'student' | icons }}
+            <p appCustom [colorHighlight]="color">
+            {{student.firstname}}-{{student.lastname}}, Address: {{student.address}} ,age- {{student.age}}
+            AvgMarks: {{student.avgeMarks}}</p>
+            <br/>
+            @if(student.isPaid){
+<app-course-list></app-course-list>
+            }
+            <button (click)="Delete(student)">Remove</button>
+            <br/>  
+            <button (click)="Show(student)">More detailes</button>
+
+        </li>
+    }
+</ul>
+<ng-container *ngTemplateOutlet="myMassage"></ng-container>
+
+<hr />
+<button (click)="Add()">Add student</button>
+<p >choose color</p>
+<form >
+    colors:
+    <input type="radio" name="colors" (click)="color='lightgreen'">Green
+    <input type="radio" name="colors" (click)="color='red'">Red
+    <input type="radio" name="colors" (click)="color='yellow'">Yellow
+</form>
+@if(curStudent){
+    <app-show-student (SaveStudent)="SaveStudent($event)"[stud]="curStudent" [Ised]="true"> </app-show-student>
+}
+
+@if (showAdd){
+    <app-show-student (SaveStudent)="SaveStudent($event)"> </app-show-student>
+}
+
+@if (sureDelete){
+
+<app-infromation-card  (DeleteStudent)="DeleteStudent($event)">
+    <h1 ngProjectAs="header">Oops</h1>
+        <div ngProjectAs="body">Are you sure you want to delete the student?</div>
+</app-infromation-card >
+
+}
