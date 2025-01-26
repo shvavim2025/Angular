@@ -9,6 +9,10 @@ import { Lesson11HttpComponent } from '../components/lesson-11-http/lesson-11-ht
 import { Lesson11MenuComponent } from '../components/lesson-11-menu/lesson-11-menu.component';
 import { Lesson12Component } from '../components/lesson12/lesson12.component';
 import { Lesson12StyleComponent } from '../components/lesson12-style/lesson12-style.component';
+import { Lesson13Component } from '../components/lesson-13/lesson-13.component';
+import { Lesson14Component } from '../components/lesson-14/lesson-14.component';
+import { authGuard } from '../guards/auth.guard';
+import { Lesson14ChildComponent } from '../components/lesson-14-child/lesson-14-child.component';
 
 export const routes: Routes = [
     { path: 'lesson4', component:  Lesson4Component},
@@ -21,5 +25,8 @@ export const routes: Routes = [
     { path: 'lesson11http', component: Lesson11HttpComponent },
     { path: 'lesson11menu', component: Lesson11MenuComponent },
     { path: 'lesson12', component: Lesson12Component },
-    { path: 'lesson12style', component: Lesson12StyleComponent }
+    { path: 'lesson12style', component: Lesson12StyleComponent },
+    { path: 'lesson13', component: Lesson13Component },
+    { path: 'lesson14', component: Lesson14Component, canActivate:[authGuard] },
+    { path: 'student/:id', component: Lesson14ChildComponent },
 ];

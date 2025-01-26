@@ -1,0 +1,8 @@
+count: {{count}}
+<!-- @for(d of (eventService.events$ | async); track d.id){ -->
+@for(d of (data$ | async); track d.id){
+    {{d | json}}
+}
+@empty{
+    <div>אנחנו עובדים בשבילך</div>
+}

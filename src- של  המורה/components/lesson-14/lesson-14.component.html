@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+        @for(s of students; track s.id){
+            <li><a [routerLink]="'/student/'+s.id"> student {{s.id}}</a></li>
+        }
+    </ul>
+</nav>

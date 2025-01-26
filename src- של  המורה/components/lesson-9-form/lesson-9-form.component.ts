@@ -17,5 +17,4 @@ export default class Lesson9FormComponent {
   onSubmit(form: any) {
     console.log(form)
   }
-
 }

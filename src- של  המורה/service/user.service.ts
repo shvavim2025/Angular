@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { get } from 'http';
+import { EventType } from '../models/event-type.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,9 @@ export class UserService {
     new User(2, 'Bob')
   ];
 
-  getUsers(): any {
+  getUsers():  any {
 
-    this.http.get<any>("https://eventsapi.onrender.com/api/Events").subscribe(s => {
+    this.http.get<EventType[]>("https://eventsapi.onrender.com/api/Events").subscribe(s => {
      return s;
     });
 
